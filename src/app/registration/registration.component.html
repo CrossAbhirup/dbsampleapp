@@ -1,0 +1,61 @@
+<div *ngIf="alert" class="alert alert-success alert-dismissable show" role="alert">
+    <strong>Success !</strong> Data has been added successfully.
+    <button (click)="closeAlert()" type="button" class="close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  
+  <form class="form-horizontal" [formGroup]="register" (ngSubmit)="onSubmit()">
+    <fieldset>
+      <div id="legend" class="ml-2">
+        <legend class="">Register</legend>
+      </div>
+      <div class="control-group mr-2 ml-2">
+        <!-- Name -->
+        <label class="control-label" for="name">Name</label>
+        <div class="controls">
+          <input type="text" id="name" formControlName="name" name="name" placeholder="" class="form-control input-xlarge" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+          <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+            <div *ngIf="f.name.errors.required">Name is required</div>
+        </div>
+        </div>
+      </div>
+   
+      <div class="control-group mr-2 ml-2">
+        <!-- Email -->
+        <label class="control-label" for="email">Email</label>
+        <div class="controls">
+          <input type="email" id="email" formControlName="email" name="email" placeholder="" class="form-control input-xlarge">
+          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required">Email is required</div>
+        </div>
+        </div>
+      </div>
+   
+      <div class="control-group mr-2 ml-2">
+        <!-- Phone-->
+        <label class="control-label" for="phone">Phone</label>
+        <div class="controls">
+          <input type="tel" id="phone" formControlName="phone" name="phone" placeholder="" class="form-control input-xlarge">
+          <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+            <div *ngIf="f.phone.errors.required">Phone is required</div>
+        </div>
+        </div>
+      </div>
+   
+      <div class="control-group mr-2 ml-2">
+        <!-- Website -->
+        <label class="control-label"  for="website">Website</label>
+        <div class="controls">
+          <input type="url" id="website" formControlName="website" name="website" placeholder="" class="form-control input-xlarge">
+        </div>
+      </div>
+   
+      <div class="control-group ml-2 mt-2">
+        <!-- Button -->
+        <div class="controls">
+          <button [disabled]="loading" class="btn btn-success"><span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>Register</button>
+        </div>
+      </div>
+    </fieldset>
+  </form>

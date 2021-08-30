@@ -1,0 +1,36 @@
+.alert-wraper {
+    display: none;
+    &.open {
+        display: block;
+    }
+}
+
+.background-block{
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    top:0;
+    left: 0;
+    right:0;
+    left:0;
+    bottom:0;
+    z-index:100;
+}
+
+.container-block {
+    background: #fff;
+    position: fixed;
+    top:40%;
+    left:calc(50%-200px);
+    z-index:100;
+    width:400px;
+    padding:1rem;
+    .title{
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 1rem;
+    }
+    .footer.text-align-right{
+        text-align: right;
+        border-top:1px solid #ddd;
+        padding-top:1rem;
+    }
+}

@@ -1,0 +1,18 @@
+.example-card {
+    max-width: 400px;
+    border: 1px solid #ddd;
+    border-radius: 15px 15px 15px 15px;
+    margin-bottom: 5px;
+  }
+  
+  .example-header-image {
+    background-image: url('../../assets/userlogo.png');
+    background-size: cover;
+  }
+
+  .card{
+    margin: 5% 0%;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+  }
